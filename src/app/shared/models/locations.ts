@@ -1,3 +1,5 @@
+import { LatLng, LatLngBounds } from 'leaflet';
+
 export interface Marker {
   lat: number;
   lng: number;
@@ -5,10 +7,17 @@ export interface Marker {
   draggable: boolean;
 }
 
+export class LeafletLocation {
+  latlng: LatLng;
+  address: string;
+  viewBounds: LatLngBounds;
+}
+
 export interface Location {
   lat: number;
   lng: number;
   viewport?: Object;
+  title: string;
   zoom: number;
   address_level_1?: string;
   address_level_2?: string;

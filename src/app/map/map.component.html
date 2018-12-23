@@ -1,13 +1,1 @@
-<agm-map
-  [latitude]="lat"
-  [longitude]="lng"
-  [disableDefaultUI]="true"
-  [zoomControl]="true"
->
-  <agm-marker
-    [latitude]="location.lat"
-    [longitude]="location.lng"
-    *ngFor="let location of points; let i = index"
-  >
-  </agm-marker>
-</agm-map>
+<div class="map" leaflet [leafletOptions]="options"></div>

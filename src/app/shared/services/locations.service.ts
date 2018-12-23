@@ -32,6 +32,12 @@ export class LocationsService {
           let locations: Location[] = [];
           locations = results.map((d: any) => {
             return {
+              title:
+                d.location.street +
+                ", " +
+                d.location.city +
+                ", " +
+                d.location.state,
               lat: Number(+d.location.coordinates.latitude),
               lng: Number(+d.location.coordinates.longitude),
               zoom: 5

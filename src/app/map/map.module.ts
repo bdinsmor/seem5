@@ -1,6 +1,7 @@
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { MapRoutingModule } from './map-routing.module';
 import { MapComponent } from './map.component';
@@ -10,7 +11,7 @@ import { MapComponent } from './map.component';
   imports: [
     CommonModule,
     MapRoutingModule,
-
+    LeafletModule.forRoot(),
     AgmCoreModule.forRoot({ apiKey: "AIzaSyA6j5cBJN-pIetAHWVBttgypZqOdUSllQ4" })
   ],
   providers: [GoogleMapsAPIWrapper],

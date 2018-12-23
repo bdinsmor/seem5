@@ -1,0 +1,21 @@
+<div class="px-4" style="max-width: 60vw">
+  <nz-table
+    #nzTable
+    [nzData]="dataSet"
+    [nzPageSize]="50"
+    [nzScroll]="{ y: '240px' }"
+  >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of nzTable.data">
+        <td>{{ data.name.first }} {{ data.name.last }}</td>
+        <td>{{ data.email }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

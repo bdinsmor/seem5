@@ -1,0 +1,37 @@
+<nz-affix>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div
+        class="pl-4"
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        fxLayoutGap="10px"
+      >
+        <span style="padding-top:7px"><mat-icon>map</mat-icon></span>
+        <h3>See Em 5</h3>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nz-affix>
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/people">People</a>
+      <a mat-list-item routerLink="/locations">Locations</a>
+      <a mat-list-item routerLink="/events">Events</a>
+      <a mat-list-item routerLink="/map">Map</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet style="width: 85%"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,4 +1,4 @@
-import { MapsAPILoader } from '@agm/core';
+
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { latLng, tileLayer } from 'leaflet';
@@ -31,7 +31,6 @@ export class MapComponent implements OnInit {
 
   constructor(
     private locationsService: LocationsService,
-    public mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
     private cdr: ChangeDetectorRef
   ) {}

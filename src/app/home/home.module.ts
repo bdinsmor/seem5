@@ -11,7 +11,6 @@ import { EventsComponent } from '../events/events.component';
 import { LocationsComponent } from '../locations/locations.component';
 import { MapComponent } from '../map/map.component';
 import { PeopleComponent } from '../people/people.component';
-import { PageNotFoundComponent } from '../shared/page-not-found/page-not-found.component';
 import { HomeComponent } from './home.component';
 
 registerLocaleData(en);
@@ -20,8 +19,7 @@ const appRoutes: Routes = [
   { path: "people", component: PeopleComponent },
   { path: "locations", component: LocationsComponent },
   { path: "events", component: EventsComponent },
-  { path: "map", component: MapComponent },
-  { path: "**", component: PageNotFoundComponent }
+  { path: "**", component: MapComponent }
 ];
 
 @NgModule({

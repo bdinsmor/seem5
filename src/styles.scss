@@ -76,6 +76,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 body {
   background-color: #fff !important;

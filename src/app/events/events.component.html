@@ -1,12 +1,32 @@
 <div class="events-view px-2 pt-5">
   <div *ngIf="calendarOptions">
-    <ng-fullcalendar
-      #ucCalendar
-      [options]="calendarOptions"
-      (eventClick)="eventClick($event.detail)"
-      (eventDrop)="updateEvent($event.detail)"
-      (eventResize)="updateEvent($event.detail)"
-      (clickButton)="clickButton($event.detail)"
-    ></ng-fullcalendar>
+    <mat-sidenav-container>
+      <mat-sidenav #eventDetails mode="side" position="end">
+        <div *ngIf="displayEvent" class="event-details px-5 pt-5">
+          <h3>{{ displayEvent.event.title }}</h3>
+          {{ displayEvent | json }}
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="eventDetails.close()"
+          >
+            Close
+          </button>
+        </div>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+        <ng-fullcalendar
+          #ucCalendar
+          [options]="calendarOptions"
+          (eventClick)="eventDetails.open(); eventClick($event.detail)"
+          (eventDrop)="updateEvent($event.detail)"
+          (eventResize)="updateEvent($event.detail)"
+          (clickButton)="clickButton($event.detail)"
+        ></ng-fullcalendar>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
 </div>

@@ -1,25 +1,84 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
 @include mat-core;
 
-$md-customblue: (50: #e3effa, 100: #bad6f2, 200: #8cbbe9, 300: #5e9fe0, 400: #3c8bd9, 500: #1976d2, 600: #166ecd, 700: #1263c7, 800: #0e59c1, 900: #0846b6, A100: #e0eaff, A200: #adc6ff, A400: #7aa3ff, A700: #6191ff, contrast: (50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #ffffff, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000));
-$md-customblue2: (50: #e4f2fe, 100: #bce0fb, 200: #90cbf9, 300: #64b6f7, 400: #42a6f5, 500: #2196f3, 600: #1d8ef1, 700: #1883ef, 800: #1479ed, 900: #0b68ea, A100: #ffffff, A200: #e1ecff, A400: #aeccff, A700: #95bcff, contrast: (50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000));
-
+$md-customblue: (
+  50: #e3effa,
+  100: #bad6f2,
+  200: #8cbbe9,
+  300: #5e9fe0,
+  400: #3c8bd9,
+  500: #1976d2,
+  600: #166ecd,
+  700: #1263c7,
+  800: #0e59c1,
+  900: #0846b6,
+  A100: #e0eaff,
+  A200: #adc6ff,
+  A400: #7aa3ff,
+  A700: #6191ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$md-customblue2: (
+  50: #e4f2fe,
+  100: #bce0fb,
+  200: #90cbf9,
+  300: #64b6f7,
+  400: #42a6f5,
+  500: #2196f3,
+  600: #1d8ef1,
+  700: #1883ef,
+  800: #1479ed,
+  900: #0b68ea,
+  A100: #ffffff,
+  A200: #e1ecff,
+  A400: #aeccff,
+  A700: #95bcff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
 $app-primary: mat-palette($md-customblue);
 $app-accent: mat-palette($md-customblue2);
 $app-warn: mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
-
 @include angular-material-theme($app-theme);
-
-@import '~bootstrap/dist/css/bootstrap.css';
-
-html, body {
-    height: 100%;
-}
-
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~fullcalendar/dist/fullcalendar.min.css";
+html,
 body {
-    background-color: #fff !important;
-    margin: 0;
-    font-family: 'Metropolis', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif !important;
+  height: 100%;
+}
+body {
+  background-color: #fff !important;
+  margin: 0;
+  font-family: "Metropolis", "Avenir Next", "Helvetica Neue", Arial, sans-serif !important;
 }

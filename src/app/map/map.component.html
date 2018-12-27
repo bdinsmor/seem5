@@ -1,1 +1,29 @@
-<div class="map" leaflet [leafletOptions]="options"></div>
+<div class="map" style="max-width: 95%">
+  <mat-sidenav-container class="map">
+    <mat-sidenav #mapDetails id="mapDetails" mode="side" position="end">
+      <div *ngIf="selectedLocation" class="location-details mx-5">
+        <h3>{{ selectedLocation.title }}</h3>
+        <h4 class="muted-text">
+          {{ selectedLocation.details.location.address }}
+        </h4>
+        <h4 class="muted-text" *ngIf="selectedLocation.details.contact">
+          {{ selectedLocation.details.contact.formattedPhone }}
+        </h4>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" (click)="mapDetails.close()">
+          Close
+        </button>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="map">
+      <div
+        class="map"
+        leaflet
+        [leafletOptions]="options"
+        [leafletLayers]="markers"
+      ></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

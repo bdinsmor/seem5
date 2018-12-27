@@ -1,4 +1,4 @@
-import { LatLng, LatLngBounds } from 'leaflet';
+import { LatLng, LatLngBounds } from "leaflet";
 
 export interface Marker {
   lat: number;
@@ -14,6 +14,8 @@ export class LeafletLocation {
 }
 
 export interface Location {
+  id: string;
+  categories: string;
   lat: number;
   lng: number;
   viewport?: Object;
@@ -25,4 +27,5 @@ export interface Location {
   address_zip?: string;
   address_state?: string;
   marker?: Marker;
+  details: any;
 }

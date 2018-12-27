@@ -1,3 +1,5 @@
+import { Marker, LatLngExpression, MarkerOptions, marker } from "leaflet";
+
 export interface Person {
   name: {
     title: string;
@@ -30,4 +32,15 @@ export interface Person {
     thumbnail: string;
   };
   nat: string;
+}
+
+export class CustomMarker<P = any> extends Marker {
+  location: Location;
+}
+
+export function customMarker(
+  latlng: LatLngExpression,
+  options?: MarkerOptions
+): Marker {
+  return marker(latlng, options);
 }
